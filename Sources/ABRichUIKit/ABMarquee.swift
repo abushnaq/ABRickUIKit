@@ -35,17 +35,17 @@ import UIKit
  */
 
 public struct Headline : Hashable {
-    static func == (lhs: Headline, rhs: Headline) -> Bool {
+    public static func == (lhs: Headline, rhs: Headline) -> Bool {
         lhs.id == rhs.id
     }
-    func hash(into hasher: inout Hasher)
+    public func hash(into hasher: inout Hasher)
     {
         hasher.combine(id)
     }
     
-    let id = UUID().uuidString
-    var title : String = ""
-    var touchCallback : ((String) -> Void)?
+    public let id = UUID().uuidString
+    public var title : String = ""
+    public var touchCallback : ((String) -> Void)?
     
 }
 
@@ -163,7 +163,7 @@ public class ABMarquee: UIView {
         marqueeConstraints.append(constraint)
         self.addConstraint(constraint)
     }
-    func removeHeadline(_ headlineID : String)
+    public func removeHeadline(_ headlineID : String)
     {
         let labelForHeadline = labelsForHeadlines.filter() { $0.key.id == headlineID}.map() { return $0.value }
         headlinesToAnimate = headlinesToAnimate.filter() { $0.id != headlineID }
@@ -190,7 +190,7 @@ public class ABMarquee: UIView {
     var pendingHeadlineRemoves : [() -> Void] = [() -> Void]()
 
     
-    func addHeadline(_ headline : Headline)
+    public func addHeadline(_ headline : Headline)
     {
         headlinesToAnimate.append(headline)
         pendingHeadlineAdds.append(
