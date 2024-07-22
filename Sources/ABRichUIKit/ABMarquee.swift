@@ -35,6 +35,9 @@ import UIKit
  */
 
 public struct Headline : Hashable {
+    public init() {
+        
+    }
     public static func == (lhs: Headline, rhs: Headline) -> Bool {
         lhs.id == rhs.id
     }
@@ -72,7 +75,7 @@ public class ABMarquee: UIView {
         self.addGestureRecognizer(tapGesture)
     }
     var animator : UIViewPropertyAnimator?
-    func start() {
+    public func start() {
         guard animator?.state != .active else { animator?.continueAnimation(withTimingParameters: nil, durationFactor: 1.0)
             return }
         animator = UIViewPropertyAnimator(duration: animationSpeed, curve: .linear, animations: {
@@ -108,7 +111,7 @@ public class ABMarquee: UIView {
         pendingHeadlineRemoves.removeAll()
     }
     
-    func stop() {
+    public func stop() {
         self.animator?.pauseAnimation()
     }
     
