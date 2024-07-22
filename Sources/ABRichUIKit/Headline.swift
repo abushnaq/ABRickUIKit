@@ -1,12 +1,17 @@
-//
-//  Headline.swift
-//  
-//
-//  Created by Ahmad Remote on 7/22/24.
-//
-
-import UIKit
-
-class Headline: NSObject {
-
+public struct Headline : Hashable {
+    public init() {
+        
+    }
+    public static func == (lhs: Headline, rhs: Headline) -> Bool {
+        lhs.id == rhs.id
+    }
+    public func hash(into hasher: inout Hasher)
+    {
+        hasher.combine(id)
+    }
+    
+    public let id = UUID().uuidString
+    public var title : String = ""
+    public var touchCallback : ((String) -> Void)?
+    
 }
