@@ -34,7 +34,7 @@ import UIKit
  
  */
 
-struct Headline : Hashable {
+public struct Headline : Hashable {
     static func == (lhs: Headline, rhs: Headline) -> Bool {
         lhs.id == rhs.id
     }
@@ -49,7 +49,7 @@ struct Headline : Hashable {
     
 }
 
-class ABMarquee: UIView {
+public class ABMarquee: UIView {
     var container : UIView = UIView()
     public var margin : CGFloat = 15.0
     public var animationSpeed : Double = 3.0
