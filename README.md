@@ -10,4 +10,4 @@ Other controls to add:
 1. Typing effect TextView(will be SwiftUI only).
 2. Stats meter for an amount of time(think GitHub commit list over the past year).
 3. Watch/Alarm icon that ticks per second and doesn't kill performance/the device.
-4. 
+   
